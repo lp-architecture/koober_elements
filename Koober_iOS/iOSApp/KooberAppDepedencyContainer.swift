@@ -35,6 +35,7 @@ public class KooberAppDependencyContainer {
 
   // MARK: - Properties
   let userSessionDataStore: UserSessionDataStore
+  let userSessionStatePersister: UserSessionStatePersister
   let stateStore: Store<AppState> = {
     return Store(reducer: Reducers.appReducer,
                  state: .launching(LaunchViewControllerState()),
@@ -45,7 +46,6 @@ public class KooberAppDependencyContainer {
   }
   let entryPointGetters = EntryPointGetters()
   let appRunningGetters: AppRunningGetters
-  let userSessionStatePersister: UserSessionStatePersister
 
   // MARK: - Methods
   public init() {
